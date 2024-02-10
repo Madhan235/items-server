@@ -1,0 +1,18 @@
+[
+    { "label": "2018", "value": 11.13 },
+    { "label": "2019", "value":  13.45},
+    { "label": "2020", "value": 18.56 },
+    { "label": "2021", "value": 22.59 },
+    { "label": "2022", "value": 21.98 },
+    { "label": "2023", "value": 29.76 }
+    
+  ]
+  
+  // Internet addiction disorder (IAD)
+
+ [ {"label": "July", "value": 70.21 },
+    { "label": "Aug", "value": 66.72 },
+    { "label": "Sept", "value": 68.92 },
+    { "label": "Oct", "value": 69.81 },
+    { "label": "Nov", "value": 70.43 },
+    { "label": "Dec", "value": 67.38 }]
