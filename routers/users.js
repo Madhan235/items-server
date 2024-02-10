@@ -79,7 +79,7 @@ router.post("/forget-password", async (req, res) => {
         }
         const resetToken = generateResetJWT(existingUser._id);
           
-        const resetPasswordLink = `http://localhost:3000/resetpassword/${existingUser._id}/${resetToken}`
+        const resetPasswordLink = `https://catalogin.netlify.app/${existingUser._id}/${resetToken}`
 
         let transporter = nodemailer.createTransport({
             service: "gmail",
