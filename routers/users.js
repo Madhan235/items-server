@@ -60,9 +60,11 @@ router.post("/login", async (req, res) => {
             res.status(400).json("Password InCorrect")
             return;
         }
-   const token = generateJWT(checkingUser._id);
-   res.status(200).json({token:token,name:checkingUser.name});
-
+   const token = await generateJWT(checkingUser._id);
+   if(token){
+    res.status(200).json({token:token,name:checkingUser.name});
+   }
+   
     } catch (error) {
         console.log(error);
         res.status(500).json(error);
