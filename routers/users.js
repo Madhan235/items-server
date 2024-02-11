@@ -47,6 +47,7 @@ router.post('/signin',async (req,res)=>{
 router.post("/login", async (req, res) => {
     try {
         const {email, password} = req.body;
+        
         const checkingUser = await findUser   (email)
         if(!checkingUser){
             res.status(400).json("Email Not Registered, Please Sign In")
