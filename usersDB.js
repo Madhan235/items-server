@@ -1,17 +1,9 @@
 import { ObjectId } from "mongodb";
 import { client } from "./db.js";
 import jwt from 'jsonwebtoken';
+
 export function findUser(userEmail){
-    
-   // userEmail ? 
-
-    return  client.db("catalog")
-    .collection("users")
-    .findOne({email:userEmail})
-
-    // :  
-    // client.db("catalog")
-    // .collection("users").findOne({name:userName})
+     return  client.db("catalog").collection("users").findOne({email:userEmail})  
 }
 
 export function addUser(hashedUser){

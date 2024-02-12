@@ -47,8 +47,8 @@ router.post('/signin',async (req,res)=>{
 router.post("/login", async (req, res) => {
     try {
         const {email, password} = req.body;
-        
-        const checkingUser = await findUser   (email)
+        console.log(req.body);
+        const checkingUser = await findUser   (email);
         if(!checkingUser){
             res.status(400).json("Email Not Registered, Please Sign In")
             return;
@@ -60,7 +60,7 @@ router.post("/login", async (req, res) => {
             res.status(400).json("Password InCorrect")
             return;
         }
-   const token = await generateJWT(checkingUser._id);
+   const token =  generateJWT(checkingUser._id);
    if(token){
     res.status(200).json({token:token,name:checkingUser.name});
    }
@@ -171,7 +171,7 @@ router.post('/content',async (req, res) => {
     try { 
         const {year} = req.body;
          const data = await getData(year);
-         console.log(data[0]);
+         
           if(data){
             res.status(200).json({diesel:data[0],petrol:data[1],gold:data[2]});
           }
